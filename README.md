@@ -4,6 +4,12 @@ Postarile vor fi incarcate dintr-o baza de date.
 API-ul extern Google TL va traduce postarile:
 Apasand un label de sub fiecare postare, textul va fi tradus din limba specificata in alta.
 
+Tehnologii incluse:
+- Node.js (express)
+- React.js
+- RESTful
+- Google Translate
+
 Structura bazei de date:
 
 1) Journal

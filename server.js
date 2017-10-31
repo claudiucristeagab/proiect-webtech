@@ -1,17 +1,19 @@
 var express = require("express")
 var bodyParser = require('body-parser')
 var app = express()
+var google = require('googleapis');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded ({
     extended:true
 }));
 
+    
 // Imports the Google Cloud client library
 const Translate = require('@google-cloud/translate');
 
 // Your Google Cloud Platform project ID
-const projectId = 'YOUR_PROJECT_ID';
+const projectId = 'proiect-webtech-ase';
 
 // Instantiates a client
 const translate = new Translate({
