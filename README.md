@@ -1,6 +1,9 @@
 Proiectul 28: Jurnal multiuser integrat cu Google Translate.
 Postarile vor fi incarcate dintr-o baza de date.
 
+API-ul extern Google TL va traduce postarile:
+Apasand un label de sub fiecare postare, textul va fi tradus din limba specificata in alta.
+
 Structura bazei de date:
 
 1) Journal
@@ -15,7 +18,7 @@ Structura bazei de date:
 -Username: text (nume utilizator)
 -Password: text (parola utilizator)
 
-Macheta pentru interfata grafica: UI.png
+Macheta pentru interfata grafica: UI.PNG
 
 Componente:
 - Form pentru postari
