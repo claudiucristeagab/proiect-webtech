@@ -17,12 +17,14 @@ Structura bazei de date:
 -Title: text (titlul postarii)
 -Post: text (aici va fi stocat continutul postarii din jurnal)
 -User: ID (va fi specificat utilizatorul ce a facut postarea) (foreign key -> Users: ID)
--Date: date (data postarii)
+-CreatedAt: date (data postarii)
 
 2) Users
 -ID: numeric automat (primary key)
 -Username: text (nume utilizator)
 -Password: text (parola utilizator)
+-CreatedAt: date (data crearii)
+
 
 Macheta pentru interfata grafica: UI.PNG
 

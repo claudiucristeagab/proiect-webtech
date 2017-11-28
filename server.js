@@ -7,7 +7,8 @@ var sequelize = new Sequelize('journal', 'root', '', {
     dialect:'mysql',
     host:'localhost',
     define: {
-        timestamps: false
+        timestamps: true,
+        updatedAt: false
     }
 })
 
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded ({
 }));
 
 var Posts = sequelize.define('posts', {
+    id: {type: Sequelize.INTEGER, primaryKey: true},
     title: Sequelize.STRING,
     content: Sequelize.STRING,
     id_user: Sequelize.INTEGER
@@ -135,7 +137,12 @@ app.delete('/users/:id', function(request, response) {
     })
 })
 app.get('/users/:id/posts', function(request, response) {
-    Posts.findAll({where:{id_user: request.params.id}}).then(
+    Posts.findAll({where:{id_user: request.params.id},
+         include: [{
+                model: Users,
+                where: { id: Sequelize.col('posts.id_user') }
+            }]
+    }).then(
             function(posts) {
                 response.status(200).send(posts)
             }

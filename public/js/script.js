@@ -12,23 +12,7 @@ function showUsers() {
             $('#userList').html(html)
         });
     })
-}/*
-function showPosts() {
-    var url = '/posts'   
-    $.get(url, function(data) {
-        var html = '';
-        data.forEach(
-            function(post) {
-                html = html + '<div class="post" style="background: lightgray">'
-                  +  '<h2>'+post.title+'</h2>'
-                  +  '<p>'+post.content+'</p>'
-                  +  '<p>'+post.id_user+'</p>'
-                + '</div>';
-            }
-        )
-        $('#content').html(html);
-    })
-}*/
+}
 
 function showPosts(userId) {
     if(userId) {
@@ -43,7 +27,8 @@ function showPosts(userId) {
                 html = html + '<div class="post" style="background: lightgray">'
                   +  '<h2>'+post.title+'</h2>'
                   +  '<p>'+post.content+'</p>'
-                  //+  '<p>by: '+post.user.name+'</p>' //daca scot asta merge sa afisez pentru un singur utilizator for some reason
+                  +  '<p>Posted at: '+post.createdAt+'</p>'
+                  +  '<p>by: '+post.user.name+'</p>' //daca scot asta merge sa afisez pentru un singur utilizator for some reason
                 + '</div>';
             }
         )
