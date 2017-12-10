@@ -31,5 +31,5 @@ Macheta pentru interfata grafica: UI.PNG
 Componente:
 - Form pentru postari
 - Buton pentru login
-- Searchbar cu filtru
-- Buton pentru adaugare postare (utilizator logat + form-ul nou va aparea in mijlocul ecranului cu un fundal mai inchis la culoare)
+- Searchbar
+- Buton pentru adaugare postare (anonim/logat)

@@ -24,12 +24,12 @@ function showPosts(userId) {
         var html = '';
         data.forEach(
             function(post) {
-                html = html + '<div class="post" style="background: lightgray">'
+                html = '<div class="post" style="background: lightgray">'
                   +  '<h2>'+post.title+'</h2>'
                   +  '<p>'+post.content+'</p>'
-                  +  '<p>Posted at: '+post.createdAt+'</p>'
+                  +  '<p>Posted on: '+post.createdAt+'</p>'
                   +  '<p>by: '+post.user.name+'</p>' //daca scot asta merge sa afisez pentru un singur utilizator for some reason
-                + '</div>';
+                + '</div>'+html;
             }
         )
         $('#content').html(html);

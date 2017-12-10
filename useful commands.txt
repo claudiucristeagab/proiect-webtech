@@ -1,1 +1,7 @@
-mysql-ctl start : porneste server mysql
+mysql-ctl start
+(porneste server mysql)
+
+git add .
+git commit -m ""
+git push -u origin master
+(adaugare in github)

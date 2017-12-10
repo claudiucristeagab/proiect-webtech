@@ -1,3 +1,8 @@
+html {
+    font-family: Segoe UI;
+    font-style: normal;
+	font-variant: normal;
+}
 #title {
     background: lightblue;
     text-align: center;
