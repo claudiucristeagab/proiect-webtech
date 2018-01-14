@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
+//import translate from 'google-translate-api'
 
 class Menu extends Component {
   render() {
     return (
       <section id="navigation">
-         <ul>
+         <ul id="navigationBar">
              <li><a href="/" className="buttonNav">Home</a></li>
              <li><a href="https://proiect-webtech-cldcrst96.c9users.io/nodeadmin/" className="buttonNav">NodeAdmin</a></li>
          </ul>
@@ -33,6 +34,7 @@ class UserSidebar extends Component {
     return (
       <ul id="userList">
       <button className="buttonUser" onClick={() => this.props.handleLoadPosts(0)}>Refresh posts</button>
+      <button className="buttonUser" onClick={() => this.props.handleUsers()}>Refresh users</button>
       {this.props.users.map(user =>(
         <UserLinkComponent key={user.id} user={user} handleLoadPosts={this.props.handleLoadPosts} />
       ))}
@@ -150,11 +152,11 @@ class NewPost extends Component {
                 Logged in as: {this.state.loggedInAs}
                 <div>
                     <textarea id="inputTitle" cols="50" value={this.state.title} onChange={this.handleInputTitleChange}></textarea>
-                     (Title - max 255 characters)
+                     <br/>(Title - max 255 characters)
                 </div>
                 <div>
                     <textarea id="inputContent" rows="6" cols="50" value={this.state.content} onChange={this.handleInputContentChange}></textarea>
-                     (Post - max 2000 characters)
+                     <br/>(Post - max 2000 characters)
                 </div>
                 <input id="inputSubmit" type="submit" value="Post" onClick={() => this.handlePost()}/>
       </section>
@@ -219,7 +221,7 @@ class App extends Component {
         </header>
         <main>
              <section className="sidebarLeft">
-                <UserSidebar users={this.state.users} handleLoadPosts={this.handleLoadPosts}/>
+                <UserSidebar users={this.state.users} handleLoadPosts={this.handleLoadPosts} handleUsers={this.handleUsers}/>
             </section>
             <Menu/>
             <NewPost users={this.state.users} handleUsers={this.handleUsers} handleLoadPosts={this.handleLoadPosts} />

@@ -4,24 +4,40 @@ html {
 	font-variant: normal;
 }
 #title {
-    background: lightblue;
+    background: #176aba;
     text-align: center;
-    margin-left: 150px;
+    margin-left: 145px;
     margin-right: 150px;
+    color: #f0f0f0;
 }
 #navigation {
-    margin-left: 110px;
+    margin-left: 150px;
+    background-color: #176aba;
+    margin-right: 150px;
+    color: #f0f0f0;
+}
+.buttonNav {
+    background-color: #176aba;
+    color:#f0f0f0
+}
+.buttonNav:visited {
+    color:#f0f0f0
 }
 .post {
-    background: #aaa;
+    margin-left:-5px;
+    background: #ffffff;
+
 }
 #content{
     margin-left: 150px;
     margin-right: 150px;
 }
+#navigation ul{
+    margin-left: -50px;
+}
 #navigation li{
     display: inline-block;
-    background-color: lightblue;
+    background-color: #176aba;
     border: none;
     color: black;
     padding: 10px 20px;
