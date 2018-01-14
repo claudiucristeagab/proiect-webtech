@@ -14,6 +14,7 @@ function showUsers() {
     })
 }
 
+
 function showPosts(userId) {
     if(userId) {
         var url = '/users/'+ userId +'/posts';

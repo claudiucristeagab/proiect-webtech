@@ -2,6 +2,8 @@ var express = require("express")
 var bodyParser = require('body-parser')
 var Sequelize = require("sequelize")
 var nodeadmin = require("nodeadmin")
+var cors = require("cors")
+//var axios = require("axios")
 
 var sequelize = new Sequelize('journal', 'root', '', {
     dialect:'mysql',
@@ -17,8 +19,10 @@ sequelize.authenticate().then(function(){
 })
 
 var app = express()
+app.use(cors());
 app.use('/nodeadmin',nodeadmin(app))
-app.use(express.static('public'))
+//app.use(express.static('public'))
+app.use(express.static('/cldcrstproiectweb/public'))
 app.use('/new_post',express.static('public/new_post'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded ({
@@ -107,6 +111,15 @@ app.get('/users/:id', function(request, response) {
         }
     })
 })
+app.get('/users/ids/:name/:password', function(request, response) {
+    Users.findOne({where: {name:request.params.name, password:request.params.password}}).then(function(user) {
+        if(user) {
+            response.status(200).send(user)
+        } else {
+            response.status(404).send()
+        }
+    })
+})
 app.post('/users', function(request, response) {
     Users.create(request.body).then(function(user) {
         response.status(201).send(user)
@@ -148,5 +161,7 @@ app.get('/users/:id/posts', function(request, response) {
             }
         )
 })
+//app.listen(8081)
 app.listen(8080)
+
 
